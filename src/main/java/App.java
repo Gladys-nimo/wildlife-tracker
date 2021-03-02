@@ -145,5 +145,12 @@ public class App {
         },new HandlebarsTemplateEngine());
 
 
+        get("/view/animals",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("animals",Animal.all());
+            return new ModelAndView(model,"animal-view.hbs");
+        },new HandlebarsTemplateEngine());
+
+
     }
 }
