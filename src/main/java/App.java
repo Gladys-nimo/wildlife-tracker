@@ -57,5 +57,23 @@ public class App {
             return new ModelAndView(model,"ranger-view.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/create/location",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            return new ModelAndView(model,"location-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/create/location/new",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            String name=request.queryParams("name");
+            Locations location=new Locations(name);
+            try {
+                location.save();
+            }catch (IllegalArgumentException e){
+                System.out.println(e);
+            }
+
+            return new ModelAndView(model,"location-form.hbs");
+        },new HandlebarsTemplateEngine());
+
     }
 }
