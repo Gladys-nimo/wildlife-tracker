@@ -152,5 +152,14 @@ public class App {
         },new HandlebarsTemplateEngine());
 
 
+        get("/create/sighting",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("rangers",Rangers.all());
+            model.put("locations",Locations.all());
+            model.put("animals",Animal.all());
+            return new ModelAndView(model,"sighting-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+
     }
 }
