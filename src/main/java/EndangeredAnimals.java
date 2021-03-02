@@ -1,4 +1,5 @@
-import java.sql.Connection;
+
+import org.sql2o.Connection;
 
 public class EndangeredAnimals extends Animal implements DatabaseManagement{
     private String health;
@@ -37,8 +38,19 @@ public class EndangeredAnimals extends Animal implements DatabaseManagement{
         }
         try (Connection con=DB.sql2o.open()){
 
-            String sql ="INSERT INTO animal"
+            String sql ="INSERT INTO animal (name,type,health,age) VALUES (:name,:type,:health,:age)";
+
+            this.id=(int) con.createQuery(sql,true)
+                    .addParameter("name",this.age)
+                    .addParameter("type",this.type)
+                    .addParameter("health",this.health)
+                    .addParameter("age",this.age)
+                    .executeUpdate()
+                    .getKey();
         }
-        super.save();
+    }
+    @Override
+    public void delete(){
+
     }
 }
