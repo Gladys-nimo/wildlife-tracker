@@ -106,5 +106,26 @@ public class App {
             return new ModelAndView(model,"animal-form.hbs");
         },new HandlebarsTemplateEngine());
 
+        post("/create/animal/new",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            String type=request.queryParams("type");
+            System.out.println(type);
+            String health=request.queryParams("health");
+            System.out.println(health);
+            String age=request.queryParams("age");
+            System.out.println(age);
+            String name=request.queryParams("name");
+            System.out.println(name);
+            if(type.equals(EndangeredAnimals.ANIMAL_TYPE)){
+                EndangeredAnimals endangered=new EndangeredAnimals(name,EndangeredAnimals.ANIMAL_TYPE,health,age);
+                endangered.save();
+            }
+            else {
+                Animal animal=new Animal(name,Animal.ANIMAL_TYPE);
+                animal.save();
+            }
+            return new ModelAndView(model,"animal-form.hbs");
+        },new HandlebarsTemplateEngine());
+
     }
 }
