@@ -16,7 +16,7 @@ class AnimalTest {
     void tearDown() throws Exception {
     }
 
-    public DatabaseRule databaseRule = new DatabaseRule();
+//    public DatabaseRule databaseRule = new DatabaseRule();
 
     @Test
     void testInstanceOfAnimalClass_true() {

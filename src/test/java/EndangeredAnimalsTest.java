@@ -7,8 +7,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EndangeredAnimalsTest {
-@Rule
-public DatabaseRule database = new DatabaseRule();
+//@Rule
+//public DatabaseRule database = new DatabaseRule();
     @BeforeEach
     void setUp() {
     }

@@ -13,8 +13,8 @@ class LocationsTest {
     @AfterEach
     void tearDown() throws Exception{
     }
-    @Rule
-    public DatabaseRule databaseRule = new DatabaseRule();
+//    @Rule
+//    public DatabaseRule databaseRule = new DatabaseRule();
 
     @Test
     void createInstanceOfLocationClass() {
