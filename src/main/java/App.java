@@ -42,16 +42,16 @@ public class App {
             int idOfRanger= Integer.parseInt(request.params(":id"));
             Rangers foundRanger=Rangers.find(idOfRanger);
             List<Sightings> sightings=foundRanger.getRangerSightings();
-            ArrayList<String> animal=new ArrayList<String>();
+            ArrayList<String> animals=new ArrayList<String>();
             ArrayList<String> types=new ArrayList<String>();
             for (Sightings sighting : sightings){
                 String animal_name=Animal.find(sighting.getAnimal_id()).getName();
                 String animal_type=Animal.find(sighting.getAnimal_id()).getType();
-                animal.add(animal_name);
+                animals.add(animal_name);
                 types.add(animal_type);
             }
             model.put("sightings",sightings);
-            model.put("animal",animal);
+            model.put("animals",animals);
             model.put("types",types);
             model.put("rangers",Rangers.all());
             return new ModelAndView(model,"ranger-view.hbs");
@@ -79,6 +79,31 @@ public class App {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("locations",Locations.all());
             return new ModelAndView(model,"location-view.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/view/location/sightings/:id",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            int idOfLocation= Integer.parseInt(request.params(":id"));
+            Locations foundLocation=Locations.find(idOfLocation);
+            List<Sightings> sightings=foundLocation.getLocationSightings();
+            ArrayList<String> animals=new ArrayList<String>();
+            ArrayList<String> types=new ArrayList<String>();
+            for (Sightings sighting : sightings){
+                String animal_name=Animal.find(sighting.getAnimal_id()).getName();
+                String animal_type=Animal.find(sighting.getAnimal_id()).getType();
+                animals.add(animal_name);
+                types.add(animal_type);
+            }
+            model.put("sightings",sightings);
+            model.put("animals",animals);
+            model.put("types",types);
+            model.put("locations",Locations.all());
+            return new ModelAndView(model,"location-view.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/create/animal",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            return new ModelAndView(model,"animal-form.hbs");
         },new HandlebarsTemplateEngine());
 
     }
