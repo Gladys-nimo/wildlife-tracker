@@ -127,5 +127,23 @@ public class App {
             return new ModelAndView(model,"animal-form.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/create/animal/endangered",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            List<String> health= new ArrayList<String>();
+            health.add(EndangeredAnimals.HEALTH_HEALTHY);
+            health.add(EndangeredAnimals.HEALTH_ILL);
+            health.add(EndangeredAnimals.HEALTH_OKAY);
+            List<String> age= new ArrayList<String>();
+            age.add(EndangeredAnimals.AGE_ADULT);
+            age.add(EndangeredAnimals.AGE_NEWBORN);
+            age.add(EndangeredAnimals.AGE_YOUNG);
+            model.put("health",health);
+            model.put("age",age);
+            String typeChosen="endangered";
+            model.put("endangered",typeChosen);
+            return new ModelAndView(model,"animal-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+
     }
 }
