@@ -22,7 +22,7 @@ class EndangeredAnimalsTest {
 
             String deleteAnimalQuery = "DELETE FROM animals * ";
             String deleteSightingsQuery = "DELETE FROM sightings *";
-            String deleteRangerQuery = "DELETE FROM rangers";
+            String deleteRangerQuery = "DELETE FROM rangers *";
             con.createQuery(deleteAnimalQuery).executeUpdate();
             con.createQuery(deleteSightingsQuery).executeUpdate();
             con.createQuery(deleteRangerQuery).executeUpdate();

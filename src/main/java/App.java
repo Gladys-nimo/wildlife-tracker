@@ -11,6 +11,8 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] arg){
+
+        staticFileLocation("/public");
         get("/", (request, response) -> {
             Map<String,Object> model=new HashMap<String,Object>();
             return new ModelAndView(model,"index.hbs");
@@ -36,6 +38,7 @@ public class App {
            model.put("rangers",Rangers.all());
            return new ModelAndView(model,"ranger-view.hbs");
        }, new HandlebarsTemplateEngine());
+
 
         get("/view/ranger/sightings/:id",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
