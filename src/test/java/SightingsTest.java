@@ -1,17 +1,26 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SightingsTest {
 
     @BeforeEach
-    void setUp() {
+    public void before() {
+        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", "gladys");
     }
 
     @AfterEach
-    void tearDown() {
+    public void after() {
+        try (Connection con = DB.sql2o.open()) {
+
+
+            String deleteSightingsQuery = "DELETE FROM sightings *";
+               con.createQuery(deleteSightingsQuery).executeUpdate();
+                 }
     }
 //    @Rule
 //    public DatabaseRule databaseRule=new DatabaseRule();
@@ -35,13 +44,17 @@ class SightingsTest {
             System.out.println(e);
         }
     }
-    //
+
     @Test
     public void findSightingByID() {
         Sightings sighting=setUpNewSighting();
         sighting.save();
-        Sightings foundSighting=Sightings.find(sighting.getId());
-        assertTrue(foundSighting.equals(sighting));
+        Sightings foundSighting= Sightings.find(sighting.getId());
+        System.out.println(sighting.getId());
+        System.out.println(foundSighting.getId());
+        assertEquals(true,foundSighting.equals(sighting));
+//
+//
 
     }
     @Test

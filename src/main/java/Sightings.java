@@ -95,10 +95,10 @@ public class Sightings {
                     .executeUpdate()
                     .getKey();
 
-            con.createQuery(joinRanger).addParameter("ranger_id",this.getRanger_id()).addParameter("sighting_id",
-                    this.getId()).executeUpdate();
-            con.createQuery(joinLocation).addParameter("location_id",this.getLocation_id()).addParameter("sighting_id",
-                    this.id).executeUpdate();
+//            con.createQuery(joinRanger).addParameter("ranger_id",this.getRanger_id()).addParameter("sighting_id",
+//                    this.getId()).executeUpdate();
+//            con.createQuery(joinLocation).addParameter("location_id",this.getLocation_id()).addParameter("sighting_id",
+//                    this.id).executeUpdate();
 
         }
 
@@ -106,11 +106,13 @@ public class Sightings {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+//        if (this == o) return true;
+        if (o == null || !(o instanceof Sightings)) return false;
         Sightings sightings = (Sightings) o;
-        return id == sightings.id && location_id == sightings.location_id && ranger_id == sightings.ranger_id && animal_id == sightings.animal_id && Objects.equals(date, sightings.date) && Objects.equals(time, sightings.time);
+        return id == sightings.id && location_id == sightings.location_id && ranger_id == sightings.ranger_id && animal_id == sightings.animal_id;
     }
+
 
     @Override
     public int hashCode() {

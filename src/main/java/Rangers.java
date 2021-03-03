@@ -41,7 +41,7 @@ public class Rangers {
     }
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO rangers (name,badge_number,phone_number) VALUESV(:name,:badge_number,:phone_number)";
+            String sql = "INSERT INTO rangers (name,badge_number,phone_number) VALUES (:name,:badge_number,:phone_number)";
             if (name.equals("") || badge_number.equals("") || phone_number.equals("")) {
                 throw new IllegalArgumentException("All fields must be filled");
             }

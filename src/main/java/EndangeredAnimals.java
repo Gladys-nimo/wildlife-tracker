@@ -38,7 +38,7 @@ public class EndangeredAnimals extends Animal implements DatabaseManagement{
         }
         try (Connection con=DB.sql2o.open()){
 
-            String sql ="INSERT INTO animal (name,type,health,age) VALUES (:name,:type,:health,:age)";
+            String sql ="INSERT INTO animals (name,type,health,age) VALUES (:name,:type,:health,:age)";
 
             this.id=(int) con.createQuery(sql,true)
                     .addParameter("name",this.age)
@@ -49,8 +49,8 @@ public class EndangeredAnimals extends Animal implements DatabaseManagement{
                     .getKey();
         }
     }
-    @Override
-    public void delete(){
-
-    }
+//    @Override
+//    public void delete(){
+//
+//    }
 }
