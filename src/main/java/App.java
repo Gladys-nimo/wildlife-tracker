@@ -40,7 +40,7 @@ public class App {
        }, new HandlebarsTemplateEngine());
 
 
-        get("/view/rangers/delete/:id",(request, response) -> {
+        get("/view/rangers/:id/delete",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("rangers",Rangers.all());
             return new ModelAndView(model,"ranger-view.hbs");
