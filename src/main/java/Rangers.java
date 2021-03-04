@@ -100,8 +100,8 @@ public class Rangers {
                 sightings.add(sighting);
 
             }
-            if(sightings.size()==0){
-                throw new IllegalArgumentException("Ranger has no sighting");
+            if(sightings.size()== 0){
+                throw new IllegalArgumentException("Ranger has no sightings");
             }
             else {return sightings;}
 

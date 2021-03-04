@@ -40,6 +40,12 @@ public class App {
        }, new HandlebarsTemplateEngine());
 
 
+        get("/view/rangers/delete/:id",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("rangers",Rangers.all());
+            return new ModelAndView(model,"ranger-view.hbs");
+        }, new HandlebarsTemplateEngine());
+
         get("/view/ranger/sightings/:id",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             int idOfRanger= Integer.parseInt(request.params(":id"));
@@ -83,6 +89,13 @@ public class App {
             model.put("locations",Locations.all());
             return new ModelAndView(model,"location-view.hbs");
         },new HandlebarsTemplateEngine());
+
+        get("/view/locations/delete/:id",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("locations",Locations.all());
+            return new ModelAndView(model,"location-view.hbs");
+        },new HandlebarsTemplateEngine());
+
 
         get("/view/location/sightings/:id",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();

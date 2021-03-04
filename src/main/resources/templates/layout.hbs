@@ -2,7 +2,11 @@
 <html>
 <head>
     <title>{{#block "title"}}Wildlife Tracker{{/block}}</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Css/style.css">
+{{!-- //    <script src="https://unpkg.com/@popperjs/core@2"></script> --}}
+{{!-- //    <script src="/Js/jquery-3.6.0.js"></script> --}}
+{{!-- //    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.0/umd/popper.min.js" integrity="sha512-uxtUCZ+gIIpqJVZe/0IgmHq5yqW+2gzo3zsSqRXSlUBEM2IYxxnuyg7+i7j9SCv1R74/Zixdx0v8OiyShPWbkQ==" crossorigin="anonymous"></script> --}}
 {{!--     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'> --}}
 {{!--     <link rel="stylesheet" href="/css/bootstrap.css"> --}}
 {{!--     <link rel="stylesheet" href="/css/app.css"> --}}
@@ -11,35 +15,40 @@
 {{!--     <script src="/js/bootstrap.min.js"></script> --}}
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+{{!--     <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> --}}
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+{{!--         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> --}}
+{{!--             <span class="navbar-toggler-icon"></span> --}}
+{{!--         </button> --}}
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
+        <div class="navbar">
+            <ul>
+                <li><a class="nav-link" href="/">Ranger</a></li>
+                  <a  href="/view/rangers">view your rangers</a>
+{{!--                  <li><a class="nav-link" href="/view/rangers">Ranger</a></li> --}}
+                    <li><a class="nav-link" href="/view/animals">Animal</a></li>
+                    <li><a class="nav-link" href="/view/locations">Location</a></li>
+                    <li><a class="nav-link" href="/view/sightings">Sighting</a></li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/" id="viewDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        View
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/view/rangers">Ranger</a>
-                        <a class="dropdown-item" href="/view/animals">Animal</a>
-                        <a class="dropdown-item" href="/view/locations">Location</a>
-                        <a class="dropdown-item" href="/view/sightings">Sighting</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/" id="createDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create
-                    </a>
+
+
+{{!--                 <li class="nav-item dropdown"> --}}
+{{!--                     <a class="nav-link dropdown-toggle" href="/" id="viewDropdown" role="button" --}}
+{{!--                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> --}}
+{{!--                         View --}}
+{{!--                     </a> --}}
+{{!--                     <div class="dropdown-menu" aria-labelledby="navbarDropdown"> --}}
+{{!--                         <a class="dropdown-item" href="/view/rangers">Ranger</a> --}}
+{{!--                         <a class="dropdown-item" href="/view/animals">Animal</a> --}}
+{{!--                         <a class="dropdown-item" href="/view/locations">Location</a> --}}
+{{!--                         <a class="dropdown-item" href="/view/sightings">Sighting</a> --}}
+{{!--                     </div> --}}
+{{!--                 </li> --}}
+{{!--                 <li class="nav-item dropdown"> --}}
+{{!--                     <a class="nav-link dropdown-toggle" href="/" id="createDropdown" role="button"> --}}
+
+{{!--                         Create --}}
+{{!--                     </a> --}}
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/create/ranger">Ranger</a>
                         <a class="dropdown-item" href="/create/animal">Animal</a>
