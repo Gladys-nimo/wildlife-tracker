@@ -1,3 +1,4 @@
+import org.graalvm.compiler.nodes.calc.ObjectEqualsNode;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -176,6 +177,14 @@ public class App {
             model.put("animals",Animal.all());
             return new ModelAndView(model,"animal-view.hbs");
         },new HandlebarsTemplateEngine());
+
+         post("/view/animals/:id/delete",(request, response) -> {
+             Map<String, Object> model = new HashMap<>();
+             Animal animal = Animal.find(Integer.parseInt((":id")));
+             animal.delete();
+             model.put("animals", Animal.all());
+             return new ModelAndView(model,"animal-view.hbs");
+         }, new HandlebarsTemplateEngine());
 
 
         get("/create/sighting",(request, response) -> {
