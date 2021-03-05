@@ -51,11 +51,14 @@ public class App {
        }, new HandlebarsTemplateEngine());
 
 
-        get("/view/rangers/:id/delete",(request, response) -> {
-            Map<String,Object> model=new HashMap<String, Object>();
-            model.put("rangers",Rangers.all());
+        post("/view/rangers/:id/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Rangers rangers = Rangers.find(Integer.parseInt((":id")));
+        rangers.delete();
+            model.put("rangers", Rangers.all());
             return new ModelAndView(model,"ranger-view.hbs");
         }, new HandlebarsTemplateEngine());
+
 
         get("/view/ranger/sightings/:id",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
@@ -178,13 +181,6 @@ public class App {
             return new ModelAndView(model,"animal-view.hbs");
         },new HandlebarsTemplateEngine());
 
-         post("/view/animals/:id/delete",(request, response) -> {
-             Map<String, Object> model = new HashMap<>();
-             Animal animal = Animal.find(Integer.parseInt((":id")));
-             animal.delete();
-             model.put("animals", Animal.all());
-             return new ModelAndView(model,"animal-view.hbs");
-         }, new HandlebarsTemplateEngine());
 
 
         get("/create/sighting",(request, response) -> {
