@@ -7,7 +7,7 @@
 font-family: 'Shippori Mincho', serif;
 }
 body{
-     background-image: url("/images/ndovu.jpg");
+     background-image: url("/images/monkey.jpg");
      background-size:cover;
      color:blanchedalmond;
 
@@ -22,7 +22,7 @@ nav{
 }
 .nav_link{
  font-size:1.8em;
-    margin-right:30px;
+    margin-left:30px;
 
 
 }
