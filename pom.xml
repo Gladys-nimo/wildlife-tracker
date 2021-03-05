@@ -95,7 +95,7 @@
                     <!-- Change this to YOUR application name! -->
                     <appName>gladys-wildlife-tracker</appName>
                     <processTypes>
-                        <web>java -jar target/Hero-squad-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/wildlife-tracker-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
