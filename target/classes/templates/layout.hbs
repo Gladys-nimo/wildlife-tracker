@@ -7,44 +7,67 @@
 </head>
 <body>
 <header>
-
-        <div class="container">
-
-       <nav>
-       <ul>
-  <h2>Create your creations here</h2>
-   <li><a class="nav-link" href="/create/ranger">Ranger</a></li>
-{{!--                                  <a  href="/create/ranger"><button class="ranger-btn btns">create rangers</button></a> --}}
-
-  <li><a class="nav-link" href="/create/sighting">Sighting</a></li>
-{{!--                                  <a  href="/create/sighting"><button class="sighting-btn btns">create sightings</button></a> --}}
-
- <li><a class="nav-link" href="/create/animal">Animal</a></li>
-{{!--                                  <a  href="/create/animal"><button class="animal-btn btns">create animals</button></a> --}}
-
-   <li><a class="nav-link" href="/create/location">Location</a></li>
-{{!--                                  <a  href="/create/location"><button class="location-btn btns">create locations</button></a> --}}
-</ul>
-</nav>
-</header>
-
+<nav class="navbar">
+<div class="navbar_container">
+<a href="#home" id="navbar__logo">Wildlife</a>
+<div class="navbar__toggle" id="mobile-menu">
+<span class="bar"></span> <span class="bar"></span>
+<span class="bar"></span>
 </div>
-<div class="container"> --}}
- <h2>View your details</h2>
-            <ul>
-                <li><a class="nav-link" href="/view/rangers">Ranger</a></li>
+<ul class="navbar_menu">
+
+<li class="navbar_item">
+<a href="/" class="navbar_links" >Home</a>
+</li>
+
+<li class="navbar_item">
+<a href="/create/location" class="navbar_links" >Location</a>
+</li>
+
+
+<li class="navbar_item">
+<a href="/create/animal" class="navbar_links" >Animal</a>
+</li>
+
+
+<li class="navbar_item">
+<a href="/create/ranger" class="navbar_links" >Ranger</a>
+</li>
+ <li class="navbar_item">
+          <a href="/create/sighting" class="navbar_links" >sighting</a>
+          </li>
+           <li class="dropdown">
+             <a href="javascript:void(0)" class="dropbtn">views</a>
+             <div class="dropdown-content">
+             <a href="/view/locations">Location</a>
+              <a href="/view/animals">Animal</a>
+                   <a href="/view/rangers">Ranger</a>
+                   <a href="/view/sightings">Sighting</a>
+                 </div>
+             </li>
+             </ul>
+             </nav>
+             </div>
+
+
+
+{{!--  <h2>View your details</h2> --}}
+{{!--  <nav class="nav_link"> --}}
+{{!--             <ul> --}}
+{{!--                 <li><a class="nav-link" href="/view/rangers">Ranger</a></li> --}}
 {{!--                   <a  href="/view/rangers"><button class="ranger-btn btns">view rangers</button></a> --}}
 
-                  <li><a class="nav-link" href="/view/sightings">Sighting</a></li>
+{{!--                   <li><a class="nav-link" href="/view/sightings">Sighting</a></li> --}}
 {{!--                   <a  href="/view/sightings"><button class="sighting-btn btns">view sightings</button></a> --}}
 
-                 <li><a class="nav-link" href="/view/animals">Animal</a></li>
+{{!--                  <li><a class="nav-link" href="/view/animals">Animal</a></li> --}}
 {{!--                   <a  href="/view/animals"><button class="animal-btn btns">view animals</button></a> --}}
 
-                   <li><a class="nav-link" href="/view/locations">Location</a></li>
+{{!--                    <li><a class="nav-link" href="/view/locations">Location</a></li> --}}
 {{!--                   <a  href="/view/locations"><button class="location-btn btns">view locations</button></a> --}}
-                  </ul>
-</div>
+{{!--                   </ul> --}}
+{{!--                   </nav> --}}
+{{!-- </div> --}}
 
     <!--begin main template-->
 
@@ -57,6 +80,7 @@
 <!--end main template-->
 {{#block "footer"}}
 
+<script src="/Js/app.js"></script>
     </body>
     </html>
 {{/block}}

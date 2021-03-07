@@ -10,9 +10,9 @@ class LocationsTest {
 
     @BeforeEach
     public void before() {
-//        DB.sql2o = new Sql2o("jdbc:postgresql://ec2-50-16-108-41.compute-1.amazonaws.com:5432/db7ir085nl2n51", "mbyktqmeseldmb","27df694c443e2b041d10bd4fbf2990bcb99d90786ed9e69f9456ef27d5300a5");
+        DB.sql2o = new Sql2o("jdbc:postgresql://ec2-3-232-163-23.compute-1.amazonaws.com:5432/ds89mql6kaov4", "nlqmlfhnmxxkpu","9efb5012f4203955d5ada3c96711648537fc4e5459e05e79ef58b4db05db0149");
 
-        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", "gladys");
+//        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", "gladys");
     }
     @AfterEach
     public void after() {
