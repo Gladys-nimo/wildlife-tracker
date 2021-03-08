@@ -14,7 +14,7 @@ class SightingsTest {
 
 
 //        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", "gladys");
-    }
+ }
 
     @AfterEach
     public void after() {
