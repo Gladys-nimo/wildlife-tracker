@@ -1,4 +1,5 @@
 import org.graalvm.compiler.nodes.calc.ObjectEqualsNode;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -22,6 +23,9 @@ public class App {
     public static void main(String[] arg){
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
+//        String connectionString = "jdbc:postgresql://ec2-52-7-115-250.compute-1.amazonaws.com:5432/d8bjgsiqb7glqn"; //!
+//        Sql2o sql2o = new Sql2o(connectionString, "dmwqctqjdpbhjd", "5e3fbbbaa453a441b72a18a121cf9921af57371d9a466309fd88c592d754487d"); //!
+
 
 
         get("/", (request, response) -> {
